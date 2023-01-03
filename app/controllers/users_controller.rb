@@ -4,9 +4,4 @@ class UsersController < ApplicationController
 
  def index
  end
- def splash
-    return unless current_user.present?
-
-    @categories = current.user.groups.all
- end
 end
