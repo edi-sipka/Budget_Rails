@@ -1,5 +1,14 @@
+ 
+ 
+ <% @categories.each do |category| %>
+     
+            <div class="col-3">
+              <img src="<%= category.icon%>" class="img-fluid" alt="...">
+            </div>
+            <div class="col-5">
+              <p class="card-text"><%= category.name %></p>
+            </div>
+<% end %>
 <%= link_to new_category_path,class:"nav-link" do %>
-
     <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Add New Category</button>
-
 <% end %>
