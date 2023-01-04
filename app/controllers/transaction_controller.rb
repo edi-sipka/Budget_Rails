@@ -3,7 +3,7 @@ class TransactionController < ApplicationController
 
     def index
         @group = Group.find(params[:category_id])
-        @transaction = @group.categories
+        @transactions = @group.categories
         @categories = current_user.groups.all
     end
 
@@ -11,9 +11,10 @@ class TransactionController < ApplicationController
         @transaction = Category.new(transaction_params)
         @transaction.user_id = current_user.id
         if @transaction.save
-            @group_categories = GroupCategory.new(group_id:params[:category_id], category_id: @transaction.id)
+        @group_categories = GroupCategory.new(group_id:params[:category_id],        
+         category_id: @transaction.id)
         if @group_categories.save
-            redirect_to category_transaction_index_path(params:[:category_id])
+            redirect_to category_transaction_index_path(params[:category_id])
         else 
             render :new
         end
@@ -30,7 +31,7 @@ end
 
 def destroy
     group = Group.find(params[:category_id])
-    @transaction = group.transaction.find(params[:id])
+    @transaction = group.categories.find(params[:id])
     category = Category.find(@transaction.id)
     category.group_categories.find_by(category_id: category.id).destroy
     @transaction.destroy
@@ -39,11 +40,11 @@ def destroy
     else
         render :new
     end
-end
+  end
 
 private
 
 def transaction_params
     params.require(:category).permit(:name, :amount)
-end
+ end
 end
