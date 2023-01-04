@@ -5,7 +5,7 @@ class TransactionController < ApplicationController
         @group = Group.find(params[:category_id])
         @transactions = @group.categories
         @categories = current_user.groups.all
-    end
+      end
 
     def create
         @transaction = Category.new(transaction_params)

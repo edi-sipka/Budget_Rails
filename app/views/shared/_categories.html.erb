@@ -1,20 +1,18 @@
     <%= render "shared/navbar", {text:"Category", path:root_path, visible:"visible"} %>
-    
-    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
-      <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 mt-20">
+
+    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-15", style="margin-top: 150px;">
+      <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 mt-15">
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
           <tr class="hover:bg-gray-50">
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-            <div class="relative h-10 w-10">
-             <img  class="h-full w-full rounded-full object-cover object-center" src=""   alt="" />
-            </div>
-
+            
             <% @categories.each do |category| %>
              <div class="text-sm">
+             <%= link_to category_transaction_index_path(category.id), class:"nav-link" do %>
               <div class="font-medium text-gray-700"><%= category.name %></div>
                 <div class="text-gray-400"><%= category.created_at %></div>
               </div>
-            </th>
+            
             
             <td class="px-6 py-4">0$</td>
              <td class="px-6 py-4">
@@ -56,7 +54,9 @@
                 /> 
             </div>
             <% end %>
+              <% end %>
           </td>
+          </th>
          </th>
         </tr>
       </tbody>
@@ -65,7 +65,9 @@
 
 
 
+
+
     <%= link_to new_category_path,class:"nav-link" do %>
-        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Add New Category</button>
+        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 20px;">Add New Category</button>
     <% end %>
 
