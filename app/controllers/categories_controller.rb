@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
-
   def show; end
 
   def new
@@ -31,7 +30,6 @@ class CategoriesController < ApplicationController
   end
 
   private
-
 
   def category_params
     params.require(:group).permit(:name, :icon)
