@@ -1,11 +1,12 @@
-<%= render "shared/navbar", {text:"Transaction", path:root_path, visible:"visible"} %>
+<%= render "shared/navbar", {text:"Transaction", path:root_path, visible:"visible"} %> 
+
 
    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-15", style="margin-top: 150px;">
       <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 mt-15">
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
           <tr class="hover:bg-gray-50">
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-            
+            <h1> <%= @total %> </h1>
             <% @transactions.each do |transaction| %>
              <div class="text-sm">
               <div class="relative h-10 w-10">
@@ -36,8 +37,7 @@
            
            
              <% end %>
-            <% end %>
-          <% end %>
+            
           </td>
           </th>
          </th>

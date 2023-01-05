@@ -3,8 +3,10 @@ class TransactionController < ApplicationController
   
     def index
       @group = Group.find(params[:category_id])
-      @transactions = @group.categories
-      @categories = current_user.groups.all
+      @transactions = current_user.categories.select { |record| record.group_categories[0].group_id == params[:category_id].to_i }
+      @total = @transactions.reduce(0) { |sum, num| sum + num.amount }
+
+
     end
   
     def create
