@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= render "shared/categories" %>
+  <%= render partial: "shared/categories" , locals: {totals: @totals} %>
 <% else %>
   <%= render "shared/splash" %>
 <% end %>

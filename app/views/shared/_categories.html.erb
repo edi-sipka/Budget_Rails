@@ -6,7 +6,7 @@
           <tr class="hover:bg-gray-50">
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
             
-            <% @categories.each do |category| %>
+            <% @categories.each_with_index do |category, idx| %>
              <div class="text-sm">
               <div class="relative h-10 w-10">
                 <img
@@ -21,7 +21,7 @@
               </div>
             
            
-            <td class="px-6 py-4"><%= @amount %>$</td>
+            <td class="px-6 py-4"><%= totals[idx]%> $</td>
              <td class="px-6 py-4">
               <div class="flex gap-2">
                 
