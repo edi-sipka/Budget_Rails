@@ -20,8 +20,8 @@
                 <div class="text-gray-400"><%= category.created_at %></div>
               </div>
             
-            
-            <td class="px-6 py-4">0$</td>
+           
+            <td class="px-6 py-4"><%= @amount %>$</td>
              <td class="px-6 py-4">
               <div class="flex gap-2">
                 
@@ -55,6 +55,6 @@
 
 
     <%= link_to new_category_path,class:"nav-link" do %>
-        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 20px;">Add New Category</button>
+        <button class="block uppercase mx-auto shadow bg-green-400  focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 20px;">Add New Category</button>
     <% end %>
 

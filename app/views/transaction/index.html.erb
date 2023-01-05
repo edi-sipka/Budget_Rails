@@ -1,28 +1,44 @@
 <%= render "shared/navbar", {text:"Transaction", path:root_path, visible:"visible"} %> 
 
 
-   <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-15", style="margin-top: 150px;">
+
+<section class="text-gray-600 body-font bg-[#F4F3FA] h-screen", style="margin-top: 80px;">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4 text-center">
+      <div class="p-4 sm:w-1/2 lg:w-1/3 w-full ">
+        <div class=" flex items-center  justify-between p-4  rounded-lg bg-white shadow-indigo-50 shadow-md">
+          <div>
+            <h2 class="text-gray-900 text-lg font-bold">Total Transactions</h2>
+            <h3 class="mt-2 text-xl font-bold text-green-500 text-left">+  <%= @total %> $</h3>
+            
+        
+          </div>
+          
+        </div>
+
+   <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-15", style="margin-top: 50px;">
       <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 mt-15">
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
           <tr class="hover:bg-gray-50">
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-            <h1> <%= @total %> </h1>
+            
             <% @transactions.each do |transaction| %>
              <div class="text-sm">
               <div class="relative h-10 w-10">
                 <img
                 class="h-full w-full rounded-full object-cover object-center"
-                src=""
+                src="https://onedonation.org/wp-content/uploads/2017/04/Transaction.png"
                 alt=""
                 /> 
             </div>
              
               <div class="font-medium text-gray-700"><%= transaction.name %></div>
                 <div class="text-gray-400"><%= transaction.created_at %></div>
+
               </div>
             
             
-            <td class="px-6 py-4"><%= transaction.amount %></td>
+            <td class="px-6 py-4"><%= transaction.amount %> $</td>
              <td class="px-6 py-4">
               <div class="flex gap-2">
                 
@@ -47,5 +63,6 @@
   </div>
 
 <%= link_to new_category_transaction_path(params[:category_id]),class:"nav-link" do %>
-        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 100px;">Add New Transaction</button>
+        <button class="block uppercase mx-auto shadow bg-green-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 100px;">Add New Transaction</button>
     <% end %>
+
