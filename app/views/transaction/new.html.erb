@@ -1,0 +1,39 @@
+<%= render "shared/navbar", {text:"Add Transaction", path:root_path, visible:"visible"} %>
+<div class="relative overflow-hidden">
+  <div class="bg-white lg:overflow-hidden">
+    <div class="mx-auto max-w-5xl lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+        <div class="mx-auto max-w-md px-4 text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0 lg:text-left">
+          <div class="lg:py-24">
+            <h1 class="mt-4 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl"><span class="block text-red-500">Add </span><span class="block text-black">Your Transaction</span></h1>
+            <p class="mt-3 text-base text-gray-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Here is the section to add your transactions.
+            <div class="mt-10 sm:mt-12">
+
+                <div class='mt-3 d-flex align-items-center flex-column'>
+   <%= form_with model: @transaction, url: category_transaction_index_path(params[:category_id])  do |form| %>
+   
+    <div class="mb-3">
+     <%= form.text_field :name, placeholder:"Enter Transaction name", class:" text-base px-4 py-2 border mb-3 border-gray-300 rounded-lg focus:outline-none focus:border-green-400"%>
+   </div>
+    
+     <div class="mb-3">
+     <%= form.number_field :amount, placeholder:"Amount", class:" text-base px-4 py-2 border mb-3 border-gray-300 rounded-lg focus:outline-none focus:border-green-400" %>
+     </div>
+    <div class="mb-3">
+      <%= form.submit "Add New Transaction", class:"bg-red-500 px-4 py-2 font-semibold text-black inline-flex items-center space-x-2 rounded" %>
+     </div>
+  <% end %>
+ </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="mt-20 hidden lg:block"><img class="" src="https://onedonation.org/wp-content/uploads/2017/04/Transaction.png" alt="Transaction" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <p class="mt-8 text-center text-base text-gray-400">© 2022 Budget App. All rights reserved.</p>
+  </div>
+</footer>

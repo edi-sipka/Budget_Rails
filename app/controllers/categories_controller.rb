@@ -30,9 +30,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  
-
-
   def destroy
     @category = Group.find(params[:id])
     @category.destroy
@@ -46,7 +43,6 @@ class CategoriesController < ApplicationController
   private
 
 
- 
     def category_params
       params.require(:group ).permit(:name, :icon)
     end
