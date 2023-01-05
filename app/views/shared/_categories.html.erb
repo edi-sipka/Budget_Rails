@@ -8,6 +8,13 @@
             
             <% @categories.each do |category| %>
              <div class="text-sm">
+              <div class="relative h-10 w-10">
+                <img
+                class="h-full w-full rounded-full object-cover object-center"
+                src="<%= category.icon %>"
+                alt=""
+                /> 
+            </div>
              <%= link_to category_transaction_index_path(category.id), class:"nav-link" do %>
               <div class="font-medium text-gray-700"><%= category.name %></div>
                 <div class="text-gray-400"><%= category.created_at %></div>
@@ -41,20 +48,16 @@
                     />
                 </svg>
                 </a>
-            <% end %>
+           
              </div>
             </tr>
         <tr class="hover:bg-gray-50">
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-            <div class="relative h-10 w-10">
-                <img
-                class="h-full w-full rounded-full object-cover object-center"
-                src="<%= category.icon %>"
-                alt=""
-                /> 
-            </div>
+           
+           
+             <% end %>
             <% end %>
-              <% end %>
+          <% end %>
           </td>
           </th>
          </th>
