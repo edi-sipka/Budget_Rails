@@ -40,7 +40,7 @@
 
 <!-- Video -->
 ## :movie_camera: Video documentation
-[video]()
+[video](https://www.loom.com/share/d759d978018b4ddebc3380abab707abe)
 
 <!-- LIVE DEMO -->
 
