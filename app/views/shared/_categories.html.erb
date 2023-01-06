@@ -1,0 +1,60 @@
+    <%= render "shared/navbar", {text:"Category", path:root_path, visible:"visible"} %>
+
+    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-15", style="margin-top: 150px;">
+      <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 mt-15">
+        <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+          <tr class="hover:bg-gray-50">
+            <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+            
+            <% @categories.each_with_index do |category, idx| %>
+             <div class="text-sm">
+              <div class="relative h-10 w-10">
+                <img
+                class="h-full w-full rounded-full object-cover object-center"
+                src="<%= category.icon %>"
+                alt=""
+                /> 
+            </div>
+             <%= link_to category_transaction_index_path(category.id), class:"nav-link" do %>
+              <div class="font-medium text-gray-700"><%= category.name %></div>
+                <div class="text-gray-400"><%= category.created_at %></div>
+              </div>
+            
+           
+            <td class="px-6 py-4"><%= totals[idx]%> $</td>
+             <td class="px-6 py-4">
+              <div class="flex gap-2">
+                
+               </div>
+              </td>
+            
+            <td class="px-6 py-4">
+            <div class="flex justify-end gap-4">
+                <%= button_to category_path(category.id), method: :delete do %>
+                
+           
+             </div>
+            </tr>
+        <tr class="hover:bg-gray-50">
+            <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+           
+           
+             <% end %>
+            <% end %>
+          <% end %>
+          </td>
+          </th>
+         </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+    <%= link_to new_category_path,class:"nav-link" do %>
+        <button class="block uppercase mx-auto shadow bg-green-400  focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded", style="margin-top: 20px;">Add New Category</button>
+    <% end %>
+
