@@ -40,13 +40,13 @@
 
 <!-- Video -->
 ## :movie_camera: Video documentation
-[video]()
+[video](https://www.loom.com/share/d759d978018b4ddebc3380abab707abe)
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Version <a name="live-demo"></a>
 
-- [Budget Rails]()
+- [Budget Rails](https://rails-bbb8.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
